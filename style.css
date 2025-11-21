@@ -1,0 +1,231 @@
+/* Global Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Consolas', 'Courier New', monospace;
+  background: #0d0b14;
+  color: #cfc3ff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #281d35;
+  position: sticky;
+  top: 0;
+  background: #000000;
+  z-index: 1000;
+}
+
+.logo { color: #b784f0; font-weight: bold; }
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #a793c4;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: #d2a8ff;
+  background: #2b1a3b;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #cfc3ff;
+}
+
+/* Sections */
+section { padding: 3rem 2rem; }
+
+
+
+/* Intro */
+.terminal { 
+  color: #d98fff;
+  margin-top: 0.8rem;
+}
+
+.intro{
+  max-width: 1100px;   /* keeps content from stretching too far */
+  margin: 0 auto;      /* centers the section */
+}
+
+/* Cards / Skills */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  max-width: 1100px;   /* keeps cards from stretching too wide */
+  margin: 0 auto;      /* centers the grid */
+  padding: 0 1rem;     /* small side padding for mobile */
+}
+
+.about,
+.card,
+.exp-card,
+.contact-info.card,
+.contact-form,
+.pgp-card {
+  background: #1A0A2E;           /* deep purple interior */
+  border: 1px solid #8c5fe0;     /* neon purple outline */
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px #8c5fe0aa; /* subtle neon glow */
+}
+
+
+
+.card {
+  background: #110024;
+  border: 1px solid #2b1d3b;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover { transform: translateY(-5px); border-color: #8c5fe0; }
+
+/* About */
+.about {
+  background: #1a1223;
+  border: 1px solid #2b1d3b;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 1100px;   /* keeps content from stretching too far */
+  margin: 0 auto;      /* centers the section */
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+/* Experience */
+
+.experience {
+  padding: 0 2rem;       /* adds breathing room on left/right */
+  max-width: 1100px;     /* keeps content centered on wide screens */
+  margin: 0 auto;        /* centers the section */
+}
+.experience h2 { margin-bottom: 0.5rem; }
+.exp-card {
+  background: #1a1223;
+  border: 1px solid #2b1d3b; 
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;   
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.exp-card:hover {
+  border-color: #9d7ff5;     /* lighter purple outline */
+  box-shadow: 0 0 12px #9d7ff555; /* glowing effect */
+}
+
+.exp-card h4 { color: #d2a8ff; }
+.company { color: #9a86b4; font-size: 0.9rem; }
+.date { color: #9d7ff5; font-size: 0.85rem; }
+
+.exp-icon {
+  font-size: 1.8rem;
+  color: #9d7ff5;
+  flex-shrink: 0; /* keeps icon from shrinking */
+}
+
+/* Contact */
+
+.contactHeader{
+  max-width: 1200px;   /* keeps content from stretching too far */
+  margin: 0 auto;      /* centers the section */ 
+}
+
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  max-width: 1100px;   /* keeps cards from stretching too wide */
+  margin: 0 auto;      /* centers the grid */
+  padding: 0 1rem;     /* small side padding for mobile */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #1a1223;
+  border: 1px solid #2b1d3b;
+  padding: 0.8rem;
+  border-radius: 6px;
+  color: #cfc3ff;
+}
+
+.contact-form button {
+  background: #8c5fe0;
+  border: none;
+  padding: 0.8rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-form button:hover { background: #a679ff; }
+
+.contact-info .card, .pgp-card {
+  background: #1a1223;
+  border: 1px solid #2b1d3b;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.pgp-card h4 { color: #d2a8ff; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #1a1223;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 1rem;
+    border: 1px solid #2b1d3b;
+    border-radius: 8px;
+  }
+
+  .nav-links.show { display: flex; }
+  .menu-btn { display: block; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+
+
+
+
+
