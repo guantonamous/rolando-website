@@ -157,22 +157,38 @@
       -->
 
       <!-- Testing FormSpree -->
-      <form 
-  action="https://formspree.io/f/mbddybnb"
-  method="POST"
-  class="contact-form"
->
-  <label>Name</label>
+<form id="contact-form">
   <input type="text" name="name" required>
-
-  <label>Email</label>
   <input type="email" name="email" required>
-
-  <label>Message</label>
   <textarea name="message" required></textarea>
-
   <button type="submit">Send</button>
 </form>
+
+<p id="status"></p>
+
+<script>
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("status");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const data = new FormData(form);
+
+    const response = await fetch("https://formspree.io/f/xyzzabcd", {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
+      status.textContent = "Message sent!";
+      form.reset();
+    } else {
+      status.textContent = "Error sending message.";
+    }
+  });
+</script>
       
       <!-- Contact Info -->
       <div class="contact-info">
@@ -191,6 +207,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
