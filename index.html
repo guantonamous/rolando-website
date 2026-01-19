@@ -136,6 +136,25 @@
     </p>
     </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   <!-- Contact -->
   <section id="contact" class="contact">
     <section id="contactHeader" class="contactHeader">
@@ -143,20 +162,10 @@
         <p>Let's connect! Reach out for collaborations, security discussions, or just to say hello.</p>
     </section>
     <div class="contact-grid">
-      <!-- Form 
-      <form class="contact-form">
-        <label>Name</label>
-        <input type="text" placeholder="Your name">
-        <label>Email</label>
-        <input type="email" placeholder="your@email.com">
-        <label>Message</label>
-        <textarea rows="5" placeholder="Write your message here..."></textarea>
-        <button type="submit">✉ Send Message</button>
-      </form>
 
-      -->
 
-      <!-- Testing FormSpree -->
+      <!-- Testing FormSpree -->    
+  <div class="contact-form-grid">
   <form id="contact-form" class="contact-form">
     <label>Name</label>
     <input type="text" name="name" placeholder="Name" required>
@@ -168,6 +177,7 @@
   </form>
 
   <p id="status"></p>
+  </div>
 
   <script>
     const form = document.getElementById("contact-form");
@@ -184,14 +194,14 @@
         headers: { "Accept": "application/json" }
       });
 
-      /*What happens
+      
       if (response.ok) {
         status.textContent = "Message sent!";
         form.reset();
       } else {
         status.textContent = "Error sending message.";
       }
-      */
+      
     });
   </script>
       
@@ -209,9 +219,33 @@
     </div>
   </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
